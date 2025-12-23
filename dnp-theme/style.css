@@ -1,0 +1,940 @@
+/*
+Theme Name: DNP Theme
+Version: 2.0
+*/
+
+/* ПЛАВНАЯ ПРОКРУТКА */
+html {
+    scroll-behavior: smooth;
+}
+
+/* БАЗОВЫЕ СТИЛИ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: white;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ШАПКА */
+.site-header {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    border-radius: 5px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+.village-info {
+    background: #E8F5E9;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #2E7D32;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+body.village-kolosok .village-info {
+    background: #FFF3E0;
+    color: #F57C00;
+}
+
+.change-village {
+    color: #666;
+    font-size: 12px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.village-switcher {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.switcher-btn {
+    padding: 10px 20px;
+    background: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.switcher-btn.active {
+    background: #2E7D32;
+    color: white;
+}
+
+body.village-kolosok .switcher-btn.active {
+    background: #F57C00;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.main-nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #2E7D32;
+}
+
+body.village-kolosok .main-nav a:hover {
+    color: #F57C00;
+}
+
+.admin-link {
+    color: #2E7D32 !important;
+    font-weight: bold !important;
+}
+
+body.village-kolosok .admin-link {
+    color: #F57C00 !important;
+}
+
+/* ГЕРОЙ */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 56px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* КНОПКИ */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #2E7D32;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #1B5E20;
+    transform: translateY(-2px);
+}
+
+body.village-kolosok .btn {
+    background: #F57C00;
+}
+
+body.village-kolosok .btn:hover {
+    background: #E65100;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #2E7D32;
+}
+
+body.village-kolosok .btn-outline:hover {
+    color: #F57C00;
+}
+
+/* ПРЕИМУЩЕСТВА */
+.advantages-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #2E7D32;
+}
+
+body.village-kolosok .section-title {
+    color: #F57C00;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.advantage-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+}
+
+.advantage-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+/* ГАЛЕРЕЯ */
+.gallery-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* УЧАСТКИ */
+.plots-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.plots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.plot-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.plot-card:hover {
+    transform: translateY(-5px);
+}
+
+.plot-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.plot-content {
+    padding: 20px;
+}
+
+.plot-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.plot-meta {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.plot-price {
+    font-size: 24px;
+    color: #2E7D32;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+body.village-kolosok .plot-price {
+    color: #F57C00;
+}
+
+/* КОНТАКТЫ */
+.contacts-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.contact-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #2E7D32;
+}
+
+body.village-kolosok .contact-icon {
+    color: #F57C00;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contact-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2E7D32;
+}
+
+body.village-kolosok .contact-form h3 {
+    color: #F57C00;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ФУТЕР */
+.site-footer {
+    background: #2c3e50;
+    color: white;
+    padding: 60px 0 30px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #95a5a6;
+    font-size: 14px;
+}
+
+.change-village-link {
+    color: #95a5a6;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.change-village-link:hover {
+    color: white;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 992px) {
+    .advantages-grid,
+    .plots-grid,
+    .gallery-grid,
+    .contact-info,
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .village-info {
+        margin: 0;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .advantages-grid,
+    .plots-grid,
+    .gallery-grid,
+    .contact-info,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/* ========== СТИЛИ АВТОРИЗАЦИИ И ДОСТУПА ========== */
+
+/* Шапка с информацией о поселке */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.village-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.village-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+body.village-kolosok .village-name {
+    color: #F57C00;
+}
+
+.village-status {
+    font-size: 12px;
+    color: #666;
+}
+
+.admin-badge {
+    background: #ffc107;
+    color: #212529;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.resident-badge {
+    background: #e9ecef;
+    color: #495057;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+/* Информация о доступе */
+.access-info {
+    margin-right: 20px;
+}
+
+.access-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #E8F5E9;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+body.village-kolosok .access-badge {
+    background: #FFF3E0;
+}
+
+.badge-icon {
+    font-size: 16px;
+}
+
+.badge-text {
+    color: #2E7D32;
+    font-weight: 500;
+}
+
+body.village-kolosok .badge-text {
+    color: #F57C00;
+}
+
+.logout-link {
+    color: #666;
+    font-size: 11px;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+/* Переключатель для админа */
+.village-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.switcher-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.admin-panel-btn {
+    background: #6c757d;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.admin-panel-btn:hover {
+    background: #5a6268;
+    color: white;
+}
+
+/* Разделы с разным контентом */
+.about-section,
+.news-section,
+.infrastructure-section,
+.plots-section,
+.contacts-section {
+    padding: 80px 0;
+}
+
+.about-section {
+    background: #f8f9fa;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2E7D32;
+    margin-bottom: 5px;
+}
+
+body.village-kolosok .stat-number {
+    color: #F57C00;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Новости */
+.news-section {
+    background: white;
+}
+
+.news-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-item {
+    display: flex;
+    gap: 20px;
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.news-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.news-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.access-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.access-icon {
+    font-size: 24px;
+    color: #856404;
+}
+
+.access-text {
+    color: #856404;
+    font-size: 14px;
+}
+
+/* Инфраструктура */
+.infrastructure-section {
+    background: #f8f9fa;
+}
+
+.infrastructure-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.infrastructure-text {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.infrastructure-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.infrastructure-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Участки */
+.plots-info {
+    margin-bottom: 40px;
+}
+
+.plots-text {
+    font-size: 17px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+}
+
+/* Контакты */
+.contacts-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contacts-info {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contacts-text {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.access-warning {
+    display: flex;
+    gap: 15px;
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+}
+
+.warning-icon {
+    font-size: 24px;
+}
+
+.warning-text {
+    font-size: 14px;
+    color: #856404;
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+    color: #2E7D32;
+}
+
+body.village-kolosok .contact-form h3 {
+    color: #F57C00;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2E7D32;
+}
+
+body.village-kolosok .form-group input:focus,
+body.village-kolosok .form-group textarea:focus {
+    border-color: #F57C00;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .about-content,
+    .infrastructure-content,
+    .contacts-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .access-info {
+        margin: 0;
+        order: 3;
+        width: 100%;
+    }
+    
+    .village-switcher {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .infrastructure-images {
+        grid-template-columns: 1fr;
+    }
+    
+    .access-badge {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+}
